@@ -1,5 +1,6 @@
 import React from "react";
 import "../../public/styles.css"
+import notes from "../notes"
 
 
 function Note() {
