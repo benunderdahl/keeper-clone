@@ -5,18 +5,17 @@ import Note from "./Note"
 import notes from "../notes"
 import "../../public/styles.css"
 
-function createNote(item) {
-    return <Note 
-        key={item.id}
-        title={item.title}
-        content={item.content}
-    />
-}
+
 
 function App() {
     return <div>
         <Header />
-        {notes.map(createNote)}
+        {notes.map(item => <Note 
+            key={item.id}
+            title={item.title}
+            content={item.content}
+            />
+        )}
         <Footer />
     </div>
 }
