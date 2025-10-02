@@ -9,12 +9,15 @@ import CreateArea from "./CreateArea";
 
 function App() {
     const [n, setNotes] = useState(notes)
+    function addNote(newNote) {
+        setNotes(prev => [...prev, newNote])
+    }
     function deleteNote(id) {
         setNotes((prev) =>  prev.filter((note, index) => index !== id))
     }
     return <div>
         <Header />
-        <CreateArea />
+        <CreateArea onAdd={addNote}/>
         {n.map((item, index) => <Note 
             key={item.id}
             id={index}
